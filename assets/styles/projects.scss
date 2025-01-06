@@ -1,6 +1,9 @@
 .projects-container{
   //background-color: $yellow;
   padding-top: 120px;
+  h1{
+    margin-left: 60px;
+  }
   .projects-list{
     display: flex;
     justify-content: flex-start;
@@ -15,6 +18,7 @@
       overflow: hidden;
       position: relative;
       .item-content{
+        filter: grayscale(0);
         position: relative;
         background-size: cover;
         background-color: rgba(54,1,63,.4);
@@ -27,7 +31,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        transition: all .4s ease;
+        transition: transform .4s ease;
         h3{
           background-color: $purple;
           color: #fff;
@@ -60,6 +64,7 @@
           margin-bottom: 24px;
         }
       }
+
       &:hover{
         .item-content{
           transform: scale(1.04);
@@ -68,6 +73,8 @@
             z-index: 16;
           }
           .infos{
+            transform: scale(0.96);
+            margin-right: 4px;
             z-index: 16;
           }
           .links{
@@ -85,5 +92,6 @@
         }
       }
     }
+
   }
 }

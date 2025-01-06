@@ -29,7 +29,7 @@ class ProjectsController extends AbstractController
     public function details(#[MapEntity(id: 'id')] Project $project): Response
     {
         return $this->render('projects/details.html.twig', [
-            'project' => $project
+            'project' => $project,
         ]);
     }
 }

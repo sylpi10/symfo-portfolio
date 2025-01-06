@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Accueil{% endblock %}
+
+{% block menu_class %}page_class{% endblock %}
+{% block body %}
+<main class="section-container about-container">
+    <div class="about-me-wrapper">
+        <div class="name">
+            <h1>Sylvain Pillet</h1>
+            <img src="{{ asset('images/arrow.png') }}" class="arrow" alt="dessin de flêche" width="220" height="200">
+        </div>
+       <div class="image-wrapper">
+           <img src="{{ asset('images/me.png') }}" class="profile" alt="photo de profil" width="280" height="280">
+       </div>
+
+        <span class="info age">34 ans</span>
+        <span class="info dev">Développeur</span>
+        <span class="info where">Hautes <br> Pyrénnées</span>
+        <span class="info grimpe">Grimpeur</span>
+
+    </div>
+    <div class="text-wrapper">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa eum fugiat, libero optio qui sit.
+            Ab asperiores enim minima quas quibusdam.
+            Consequuntur dolores expedita fugiat nulla pariatur reprehenderit sapiente!
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa eum fugiat, libero optio qui sit.
+            Ab asperiores enim minima quas quibusdam.
+            Consequuntur dolores expedita fugiat nulla pariatur reprehenderit sapiente!
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa eum fugiat, libero optio qui sit.
+            Ab asperiores enim minima quas quibusdam.
+            Consequuntur dolores expedita fugiat nulla pariatur reprehenderit sapiente!
+        </p>
+    </div>
+</main>
+{% endblock %}

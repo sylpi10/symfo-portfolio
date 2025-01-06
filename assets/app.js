@@ -6,4 +6,13 @@
  */
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    console.log(document.body.scrollY )
+    if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+        header.classList.add('sticky');
+    }
+   else {
+        header.classList.remove('sticky');
+    }
+})

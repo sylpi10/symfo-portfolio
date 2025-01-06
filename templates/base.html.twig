@@ -13,13 +13,13 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
+    <body class="{{ body_class|default('default-page-class') }}">
     <header>
         <nav class="{{ menu_class|default('default-menu-class') }}">
             <ul>
-                <li> <a href="{{path('app_home')}}"> <img src="{{ asset('images/logo.png') }}" alt="logo" width="40"> </a></li>
+                <li class="brand"> <a href="{{path('app_home')}}"> <img src="{{ asset('images/logo.png') }}" class="logo" alt="logo" width="40"> </a></li>
                 <li><a href="{{path('app_home')}}">Accueil</a></li>
-                <li><a href="#">A propos</a></li>
+                <li><a href="{{ path('app_about') }}">A propos</a></li>
                 <li><a href="{{ path('app_projects') }}">Projets</a></li>
                 <li><a href="#">Parcours</a></li>
                 <li><a href="#">Contact</a></li>
@@ -32,5 +32,14 @@
         </nav>
     </header>
         {% block body %}{% endblock %}
+
+    <footer>
+        <div class="fonter-container">
+            <h1>je suis le fouteur</h1>
+        </div>
+    </footer>
+{#        <script src="../public/js/script.js"></script>#}
+{#    <script src="{{ asset('/public/assets/js/script.js') }}"></script>#}
+
     </body>
 </html>
