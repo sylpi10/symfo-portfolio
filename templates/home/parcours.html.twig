@@ -11,35 +11,140 @@
 
         <div class="timeline">
             <ul>
-                <li>
-                    <h2>Développeur web</h2>
-                    <h3>Ludilabel</h3>
-                    <div class="date">2021-2025</div>
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>Développeur web</h2>
+                        <h3>Ludilabel</h3>
+                        <ul>
+                            <li>Magento</li>
+                            <li>Php</li>
+                            <li>Symfony</li>
+                            <li>React</li>
+                            <li>Sql</li>
+                            <li>Html</li>
+                            <li>Sass</li>
+                            <li>Less</li>
+                            <li>Git</li>
+                        </ul>
+                        <div class="date">2021/2025</div>
+                    </div>
                 </li>
-                <li>
-                    <h2>Formatin Java/Angular</h2>
-                    <h3>Aelion</h3>
-                    <span class="date">2020</span>
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>Développeur web</h2>
+                        <h3>3WAcademy (alternance)</h3>
+                        <ul>
+                            <li>Symfony</li>
+                            <li>React</li>
+                            <li>UML</li>
+                            <li>Sql</li>
+                        </ul>
+                        <div class="date">2021/2023</div>
+                    </div>
                 </li>
-                <li>
-                    <h2>Formation Développeur Web</h2>
-                    <h3>Adrar</h3>
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>Formation Java/Angular</h2>
+                        <h3>Aelion</h3>
+                        <ul>
+                            <li>Spring Boot</li>
+                            <li>Angular</li>
+                            <li>MySql</li>
+                            <li>PostgreSql</li>
+                        </ul>
+                        <span class="date">2020</span>
+                    </div>
                 </li>
-                <li>
-                    <h2> Master 1 NUMIC</h2>
-                    <h3>Université Rennes 2</h3>
-                    <span class="date">2026/2017</span>
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>Formation Développeur Web</h2>
+                        <h3>Adrar</h3>
+                        <ul>
+                            <li>Php</li>
+                            <li>Javascript</li>
+                            <li>UML</li>
+                            <li>Merise</li>
+                            <li>Photoshop</li>
+                            <li>Sql</li>
+                        </ul>
+                        <span class="date">2019</span>
+                    </div>
                 </li>
-                <li>
-                    <h2>Licence Cinéma</h2>
-                    <h3>Université Paul Valéry</h3>
-                    <span class="date">2010/2012</span>
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <h2> Master 1 NUMIC</h2>
+                        <h3>Université Rennes 2</h3>
+                        <ul>
+                            <li>Html</li>
+                            <li>Css</li>
+                            <li>Photoshop</li>
+                            <li>Wordpress</li>
+                        </ul>
+                        <span class="date">2016/2017</span>
+                    </div>
                 </li>
-                <li></li>
+               <li class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>Licence Cinéma</h2>
+                        <h3>Université Paul Valéry</h3>
+                        <span class="date">2010/2012</span>
+                    </div>
+                </li>
             </ul>
         </div>
 
     </div>
+    <div class="toolkit-wrapper">
+
+        <div class="toolkit">
+            <span>Toolkit</span>
+        </div>
+    <div class="tag-list" id="tagList">
+        <div class="fade"></div>
+    </div>
+    </div>
+
+    <script>
+        // const COLORS = ['#bbf7d0', '#99f6e4', '#bfdbfe', '#ddd6fe', '#f5d0fe', '#fed7aa', '#fee2e2'];
+        const TAGS = ['Symfony', 'React', 'Php', 'Javascript', 'Html', 'CSS', 'Scss', 'Less', 'Sql','MySql','UI/UX', 'Magento', 'Photoshop', 'Git'];
+        const DURATION = 12000;
+        const ROWS = 5;
+        const TAGS_PER_ROW = 5;
+
+        const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+        const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+
+        const createInfiniteLoopSlider = (tags, duration, reverse) => {
+            const slider = document.createElement('div');
+            slider.className = 'loop-slider';
+            slider.style.setProperty('--duration', `${duration}ms`);
+            slider.style.setProperty('--direction', reverse ? 'reverse' : 'normal');
+
+            const inner = document.createElement('div');
+            inner.className = 'inner';
+            const tagElements = tags.map(tag => {
+                const tagDiv = document.createElement('div');
+                tagDiv.className = 'tag';
+                tagDiv.textContent = `# ${tag}`;
+                // tagDiv.style.setProperty('--bg-color', COLORS[random(0, COLORS.length)]);
+                return tagDiv;
+            });
+
+            // Append the tags twice for seamless animation
+            tagElements.concat(tagElements).forEach(el => inner.appendChild(el));
+            slider.appendChild(inner);
+            return slider;
+        };
+
+        const tagList = document.getElementById('tagList');
+        for (let i = 0; i < ROWS; i++) {
+            const tags = shuffle(TAGS).slice(0, TAGS_PER_ROW);
+            const duration = random(DURATION - 5000, DURATION + 5000);
+            const reverse = i % 2 === 0;
+            const slider = createInfiniteLoopSlider(tags, duration, reverse);
+            tagList.appendChild(slider);
+        }
+    </script>
 
 </main>
 {% endblock %}
