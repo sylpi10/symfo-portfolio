@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'montserrat';
+  src: url('../../assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$yellow: #E4D00A;
+$purple: #36013f;
+
+body, html{
+  padding: 0;
+  margin: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  font-family: "montserrat", serif;
+  margin-top: -20px;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+ul{
+  list-style-type: none;
+}
+header{
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  border: ridge red;
+  width: 100%;
+  padding: 0;
+  nav{
+    background-color: transparent;
+    display: flex;
+    position: relative;
+    //align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    ul{
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 0 14px;
+      margin: 0 60px 0 60px;
+      flex: 1;
+      align-items: center;
+      list-style-position: inside;
+      li{
+        display: flex;
+        margin-left: -1em;
+        padding-left: 0;
+        a, a:visited{
+          color: $yellow;
+          text-decoration: none;
+        }
+      }
+      img{
+        width: 40px;
+        margin: 0;
+      }
+    }
+    &.project-menu{
+      ul li a, a:visited{
+        color: $purple;
+      }
+    }
+  }
+}
+
+
+.section-container{
+  position: relative;
+
+
+//.content{
+//  @media screen and (min-width: 768px) {
+//    margin: 0 60px;
+//  }
+//  @media screen and (max-width: 768px) {
+//    margin: 0 20px;
+//  }
+//  @media screen and (max-width: 768px) {
+//    margin: 0 14px;
+//  }
+//}
+}
+
+@import "home";
+@import "projects";

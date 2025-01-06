@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Accueil{% endblock %}
+
+{% block body %}
+<main class="homepage">
+    <div class="hero-area">
+        <div class="presentation">
+            <div class="person">
+                <h1> <span class="concepteur title"> <span class="first-letter">C</span>oncepteur </span>
+                    <span class="dev title"><span class="first-letter">D</span>éveloppeur</span>
+                </h1>
+                <h2>Sylvain Pillet</h2>
+            </div>
+            <div class="picture-wrapper">
+                <img src="{{ asset("images/self.png")}}" alt="photo de profil" width="300">
+            </div>
+        </div>
+
+        <button class="cta"><a href="#">Projets</a></button>
+    </div>
+
+</main>
+{% endblock %}

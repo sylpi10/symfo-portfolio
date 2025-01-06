@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Sylvain Pillet{% endblock %}</title>
+        <link rel="icon" href="#">
+{#        <link rel="stylesheet" href="{{asset('css/style.css')}}">#}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('styles/app.scss') }}">
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+    <header>
+        <nav class="{{ menu_class|default('default-menu-class') }}">
+            <ul>
+                <li> <a href="{{path('app_home')}}"> <img src="{{ asset('images/logo.png') }}" alt="logo" width="40"> </a></li>
+                <li><a href="{{path('app_home')}}">Accueil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="{{ path('app_projects') }}">Projets</a></li>
+                <li><a href="#">Parcours</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <span class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </nav>
+    </header>
+        {% block body %}{% endblock %}
+    </body>
+</html>
