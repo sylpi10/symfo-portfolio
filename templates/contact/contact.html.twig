@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+{% block menu_class %}menu_class{% endblock %}
+
+{% block body_class %}body_class{% endblock %}
+{% block body %}
+<main class="section-container">
+    <div class="section-wrapper contact-wrapper">
+        <h1>Contact</h1>
+            <div class="contact-form">
+                {% for type, messages in app.flashes %}
+                    <div class="alert alert-{{ type }}">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                {{ form_start(form) }}
+                        <div class="">{{ form_row(form.name, {'attr':{'placeholder': 'Votre Nom'}}) }}</div>
+                        <input type="text" id="website" name="website"/>
+                        <div class="">{{ form_row(form.email,  {'attr':{'placeholder': 'Votre Email'}}) }}</div>
+                        <div class="" >{{ form_row(form.message , {'attr':{'placeholder': 'Votre Message'}}) }}</div>
+                        <button class="cta mail-cta" type="submit"><span>Envoyer</span></button>
+                {{ form_end(form) }}
+            </div>
+    </div>
+</main>
+{% endblock %}

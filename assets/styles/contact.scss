@@ -1,0 +1,73 @@
+.contact-page{
+  background: linear-gradient(-128deg, $yellow, orange);
+}
+.section-container {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 120px auto 40px auto;
+    justify-content: center;
+    position: relative;
+    //background: linear-gradient(-128deg, $purple 20%, #5E3365);
+    h1 {
+      font-family: effortless, serif;
+      font-size: 2.2rem;
+      text-transform: capitalize;
+      z-index: 12;
+      position: relative;
+      color: $purple;
+      text-align: center;
+    }
+    .contact-form{
+      width: 74%;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 80px;
+      display: flex;
+      flex-direction:column;
+      gap: 20px;
+      form{
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        input, textarea{
+          width: 100%;
+          border: none;
+          border-bottom: solid 1px $purple;
+        }
+        label{
+          margin-bottom: 12px;
+        }
+        input{
+          height: 30px;
+          margin-bottom: 30px;
+          //&:focus, &:active{
+          //  border: solid 1px $yellow;
+          //}
+        }
+        #website{
+          display: none;
+        }
+      }
+      .alert{
+        color: #fff;
+        padding: 8px 12px;
+        width: fit-content;
+        display: flex;
+        border-radius: 4px;
+        p{
+          margin: 0;
+        }
+        &.alert-success{
+          background-color: #1e751e;
+        }
+        &.alert-danger{
+          background-color: orangered;
+        }
+      }
+    }
+  }
+}

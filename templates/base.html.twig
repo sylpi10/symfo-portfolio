@@ -13,16 +13,15 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body class="{{ body_class|default('default-page-class') }}">
     <header>
         <nav class="{{ menu_class|default('default-menu-class') }}">
             <ul>
                 <li class="brand"> <a href="{{path('app_home')}}"> <img src="{{ asset('images/logo.png') }}" class="logo" alt="logo" width="40"> </a></li>
                 <li><a href="{{path('app_home')}}">Accueil</a></li>
-                <li><a href="{{ path('app_about') }}">A propos</a></li>
                 <li><a href="{{ path('app_projects') }}">Projets</a></li>
-                <li><a href="#">Parcours</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{ path('app_parcours') }}">Parcours</a></li>
+                <li><a href="{{ path('app_about') }}">A propos</a></li>
+                <li><a href="{{ path('app_contact') }}">Contact</a></li>
             </ul>
             <span class="burger">
                 <span></span>
@@ -31,6 +30,7 @@
             </span>
         </nav>
     </header>
+    <body class="{{ body_class|default('default-page-class') }}">
         {% block body %}{% endblock %}
 
     <footer>

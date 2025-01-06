@@ -1,0 +1,17 @@
+.section-container {
+  .parcours-wrapper {
+    display: flex;
+    margin: 120px auto 40px auto;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    border: ridge green;
+    h1 {
+      font-family: effortless, serif;
+      font-size: 2.2rem;
+      text-transform: capitalize;
+      z-index: 12;
+      position: relative;
+    }
+  }
+}

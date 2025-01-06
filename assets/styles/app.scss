@@ -45,6 +45,64 @@ ul{
 //}
 }
 
+button.cta{
+  width: 200px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  padding: 4px;
+  border: none;
+  &::before{
+    position: absolute;
+    content:"";
+    left: -8px;
+    transform: rotate(10deg);
+    width: 108%;
+    height: 100%;
+    transition: trasform 2s;
+  }
+  &.project-links{
+    margin:auto auto 40px auto;
+    &::before{
+      background-color: $yellow;
+    }
+  }
+  &.mail-cta{
+    margin: 40px auto;
+    &::before{
+      background-color:$purple;
+    }
+  }
+  &:hover::before{
+    animation: animate 1.2s  ease-in-out;
+  }
+  a, span{
+    z-index: 12;
+    text-align: center;
+    height: 34px;
+    padding: 4px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $yellow;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a{
+    background-color: #36013f;
+  }
+  span{
+    background-color: #fff;
+    color: $purple;
+    cursor: pointer;
+  }
+}
+
 footer{
   background-color: #333;
   min-height: 300px;
@@ -52,9 +110,12 @@ footer{
   display: flex;justify-content: center;
   align-items: center;
   color: $yellow;
+  z-index: 16;
 }
 
 @import "home";
 @import "projects";
 @import "about";
 @import "nav";
+@import "parcours";
+@import "contact";

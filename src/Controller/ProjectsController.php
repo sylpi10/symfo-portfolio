@@ -14,7 +14,7 @@ class ProjectsController extends AbstractController
     {
     }
 
-    #[Route('/projects', name: 'app_projects')]
+    #[Route('/projets', name: 'app_projects')]
     public function index(): Response
     {
         $projects = $this->projectRepository->findAll();

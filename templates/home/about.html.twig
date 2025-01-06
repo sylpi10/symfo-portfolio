@@ -2,7 +2,6 @@
 
 {% block title %} Accueil{% endblock %}
 
-{% block menu_class %}page_class{% endblock %}
 {% block body %}
 <main class="section-container about-container">
     <div class="about-me-wrapper">
@@ -14,25 +13,33 @@
            <img src="{{ asset('images/me.png') }}" class="profile" alt="photo de profil" width="280" height="280">
        </div>
 
-        <span class="info age">34 ans</span>
-        <span class="info dev">Développeur</span>
-        <span class="info where">Hautes <br> Pyrénnées</span>
-        <span class="info grimpe">Grimpeur</span>
+        <span class="info age" data-move="left">34 ans</span>
+        <span class="info dev" data-move="bottom">Développeur</span>
+        <span class="info where" data-move="top">Hautes <br> Pyrénnées</span>
+        <span class="info grimpe" data-move="right">Grimpeur</span>
 
     </div>
     <div class="text-wrapper">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa eum fugiat, libero optio qui sit.
-            Ab asperiores enim minima quas quibusdam.
-            Consequuntur dolores expedita fugiat nulla pariatur reprehenderit sapiente!
+        <p>J'ai débuté par l'intégration web en 2017 avant de me former aux autres technologies web par moi-même avant de rejoindre en 2019 une formation en développement à Toulouse.
         </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa eum fugiat, libero optio qui sit.
-            Ab asperiores enim minima quas quibusdam.
-            Consequuntur dolores expedita fugiat nulla pariatur reprehenderit sapiente!
+        <p>
+            Suite à quoi j'ai creusé différentes technologies avant de revenir aux bases du web et au Php en rejoignant une alternance de concepteur-développeur autour de Symfony et du E-commerce avec Magento auprès de l'entreprise Ludilabel
+            <br>
+                Mes missions touchant principalement au frontend et à l'UX/UI sur la refonte du site de l'entreprise.
+                <br>
+                Le développement d'un outil de personnalisation destiné à être intégré au nouveau site me permet également de mêler le frontend et le backend en utilisant Symfony et React.
+            </Ludilabel>
         </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa eum fugiat, libero optio qui sit.
-            Ab asperiores enim minima quas quibusdam.
-            Consequuntur dolores expedita fugiat nulla pariatur reprehenderit sapiente!
+        <p>J'apprécie dans le développement et plus précisément le développement fullstack, l'impression de donner vie à des choses assez abstraites en créant les modèles de données
+            et en leur donnant forme à travers leur passsage par les différentes couches de l'application jusqu'à l'affichage final.
         </p>
+
+        <p>
+            Sinon je suis aussi passionné de Cinéma, ou de sport, j'ai pratiqué le foot pendant 16 ans et je pratique maintenant l'escalade depuis 6 ans.
+            <br>
+            Récemment dabarqué dans les Hautes-Pyrennées, j'apprécie leur vue imposante ainsi que le défi d'aller quelque-fois affronter ses sommets en randonnant.
+        </p>
+
     </div>
 </main>
 {% endblock %}
