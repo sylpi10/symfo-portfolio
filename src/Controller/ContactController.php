@@ -28,7 +28,7 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             // honeypot for robots
             if (!empty($_POST['website'])) {
-                return $this->redirectToRoute("home");
+                return $this->redirectToRoute("global");
                 // if not filled, handle request
             } else {
                 try {

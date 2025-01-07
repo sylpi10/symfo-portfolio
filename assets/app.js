@@ -29,3 +29,9 @@ window.addEventListener('scroll', () => {
         })
     }
 })
+
+
+const burger = document.querySelector('.burger');
+burger.addEventListener('click', () => {
+    document.querySelector('header.header').classList.toggle('mobile-nav');
+})

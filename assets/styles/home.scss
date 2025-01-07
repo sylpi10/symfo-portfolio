@@ -8,7 +8,9 @@
 
 .homepage{
   .hero-area{
-    height: 100vh;
+    @media screen and (min-width: 768px) {
+      height: 100vh;
+    }
     background: linear-gradient(-128deg, $purple 20%, #5E3365);
     display: flex;
     flex-direction: column;
@@ -18,6 +20,7 @@
       justify-content: space-around;
       position: relative;
       margin-top: 90px;
+      flex-wrap: wrap;
       .person{
         display: flex;
         flex-direction: column;
@@ -26,11 +29,15 @@
         max-height: 80%;
         align-items: flex-start;
         h1{
-          font-size: 4rem;
+          @media screen and (min-width: 768px) {
+            font-size: 4rem;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 2rem;
+          }
           display: flex;
           margin: 0;
           padding-bottom: 40px;
-          //color: $yellow;
           flex-direction: column;
           font-family: effortless, serif;
           background: -webkit-linear-gradient($yellow 69%, orange);
@@ -45,21 +52,42 @@
           .dev{
             align-items: flex-start;
           }
-          span.first-letter{
-            font-size: 14rem;
-            line-height: 132px;
+          @media screen and (min-width: 768px) {
+            span.first-letter {
+              font-size: 14rem;
+              line-height: 132px;
+            }
           }
+          @media screen and (max-width: 768px) {
+            span.first-letter{
+              font-size: 6rem;
+              line-height: 50px;
+            }
+          }
+
         }
         h2{
           color: #fff;
+          @media screen and (max-width: 768px) {
+           margin: 0 auto 20px auto;
+            text-align: center;
+          }
         }
       }
       .picture-wrapper img{
         width: 300px;
         height: 300px;
+        @media screen and (max-width: 768px) {
+          width: 200px;
+          height: 200px;
+          margin-bottom: 20px;
+        }
         border-radius: 50%;
         z-index: 16;
         position: relative;
+      }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
       }
     }
     img.shape{
@@ -68,6 +96,9 @@
       right: 0;
       bottom: 20px;
       z-index: 4;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
     }
   }
 }

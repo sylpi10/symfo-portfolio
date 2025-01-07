@@ -1,18 +1,21 @@
 .projects-container{
-  //background-color: $yellow;
   padding-top: 120px;
   h1{
     margin-left: 60px;
+    color: #333;
+    font-family: 'effortless', serif;
+    text-align: center;
   }
   .projects-list{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     padding-left: 0;
     margin-left: 0;
     .project-item{
-      width: calc(100%/4);
+      width: calc(100%/3);
+      min-width: 300px;
       height: 300px;
       cursor: pointer;
       overflow: hidden;
@@ -20,18 +23,19 @@
       .item-content{
         filter: grayscale(0);
         position: relative;
-        background-size: cover;
+        background-size: 100%;
         background-color: rgba(54,1,63,.4);
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
-        border: inset 1px $purple;
+        border: solid 1px #fff;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        transition: transform .4s ease;
+        //transition: transform .4s ease;
+        transition: background-size .4s ease;
         h3{
           background-color: $purple;
           color: #fff;
@@ -51,8 +55,9 @@
           gap: 12px;
           span{
             padding: 4px;
-            background-color: rgba(54, 1, 63, 0.6);
-            color: #fff;
+            //background-color: rgba(54, 1, 63, 0.6);
+            background-color: rgba(228,208,10, 0.8);
+            color: #333;
           }
         }
         .links{
@@ -60,6 +65,9 @@
           display: flex;
           justify-content: space-around;
           opacity: 0;
+          @media screen and (max-width: 768px) {
+            opacity: 1;
+          }
           transition: opacity .4s ease;
           margin-bottom: 24px;
         }
@@ -67,14 +75,11 @@
 
       &:hover{
         .item-content{
-          transform: scale(1.04);
+          background-size: 120%;
           h3{
-            transform: scale(0.96);
             z-index: 16;
           }
           .infos{
-            transform: scale(0.96);
-            margin-right: 4px;
             z-index: 16;
           }
           .links{
@@ -86,12 +91,39 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: rgba(54, 1, 63, 0.4);
+            background-color: rgba(54, 1, 63, 0.6);
             z-index: 14;
           }
         }
       }
     }
-
   }
+
+  //details page
+  .project-image{
+    margin:30px auto;
+    width: 100%;
+    display: flex;
+  }
+  .project-container{
+    margin: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    .description{
+      width: 60%;
+      min-width: 400px;
+    }
+    .infos{
+      display: flex;
+      flex-direction: column;
+    }
+    p a.link{
+      color: $purple;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
 }

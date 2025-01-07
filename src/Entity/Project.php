@@ -30,7 +30,7 @@ class Project
     private ?string $githublink = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $detaillink = null;
+    private ?string $detailPic = null;
 
     #[ORM\Column(length: 255)]
     private ?string $background = null;
@@ -105,14 +105,14 @@ class Project
         return $this;
     }
 
-    public function getDetaillink(): ?string
+    public function getDetailPic(): ?string
     {
-        return $this->detaillink;
+        return $this->detailPic;
     }
 
-    public function setDetaillink(string $detaillink): static
+    public function setDetailPic(string $detailPic): static
     {
-        $this->detaillink = $detaillink;
+        $this->detailPic = $detailPic;
 
         return $this;
     }

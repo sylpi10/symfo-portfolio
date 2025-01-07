@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProjectsController!{% endblock %}
+{% block title %}Projet{% endblock %}
 {% block menu_class %}menu_class{% endblock %}
 
 {% block body %}
@@ -8,11 +8,25 @@
     <main class="section-container projects-container">
         <div class="content ">
             <h1>{{ project.name }}</h1>
+
             <div class="project-container">
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci earum in incidunt iste nihil pariatur, possimus quaerat quod sequi. Ad adipisci architecto culpa laboriosam nulla sit ullam, ut veritatis voluptatum!</p>
-
+                <div class="description">
+                    {{ project.description|raw }}
+                </div>
+                <div class="infos">
+                    <p>Développé avec : <b>{{ project.technos }}</b> </p>
+                    <p>
+                        {% if project.weblink %}
+                            <a href="{{ project.weblink }}" class="link">Voir le site</a> |
+                        {% endif %}
+                        {% if project.githublink %}
+                            <a href="{{ project.githublink }}" class="link">Voir le github</a>
+                        {% endif %}
+                    </p>
+                </div>
             </div>
+            <img src="{{ asset('images/' ~ project.detailPic) }}" class="project-image" alt="image du site" width="800">
+
         </div>
     </main>
 

@@ -14,15 +14,36 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <header>
-        <nav class="{{ menu_class|default('default-menu-class') }}">
-            <ul>
-                <li class="brand"> <a href="{{path('app_home')}}"> <img src="{{ asset('images/logo.png') }}" class="logo" alt="logo" width="40"> </a></li>
-                <li><a href="{{path('app_home')}}">Accueil</a></li>
-                <li><a href="{{ path('app_projects') }}">Projets</a></li>
-                <li><a href="{{ path('app_parcours') }}">Parcours</a></li>
-                <li><a href="{{ path('app_about') }}">A propos</a></li>
-                <li><a href="{{ path('app_contact') }}">Contact</a></li>
+    <header class="header">
+        <nav class="navbar {{ menu_class|default('default-menu-class') }}">
+         <span class="brand"> <a href="{{path('app_home')}}"> <img src="{{ asset('images/logo.png') }}" class="logo" alt="logo" width="40"> </a></span>
+            <ul class="navlist">
+                <li><a href="{{path('app_home')}}">Accueil
+                    <svg viewBox="0 0 70 36">
+                        <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+                    </svg>
+                    </a>
+                </li>
+                <li><a href="{{ path('app_projects') }}">Projets
+                        <svg viewBox="0 0 70 36">
+                            <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+                        </svg>
+                    </a></li>
+                <li><a href="{{ path('app_parcours') }}">Parcours
+                        <svg viewBox="0 0 70 36">
+                            <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+                        </svg>
+                    </a></li>
+                <li><a href="{{ path('app_about') }}">À propos
+                        <svg viewBox="0 0 70 36">
+                            <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+                        </svg>
+                    </a></li>
+                <li><a href="{{ path('app_contact') }}">Contact
+                        <svg viewBox="0 0 70 36">
+                            <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+                        </svg>
+                    </a></li>
             </ul>
             <span class="burger">
                 <span></span>

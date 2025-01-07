@@ -11,13 +11,13 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(): Response
     {
-        return $this->render('home/index.html.twig', []);
+        return $this->render('global/index.html.twig', []);
     }
 
     #[Route('/a-propos', name: 'app_about')]
     public function about(): Response
     {
-        return $this->render('home/about.html.twig', [
+        return $this->render('global/about.html.twig', [
             'page_class' => 'about-page',
             'menu_class' => 'about-menu',
         ]);
@@ -25,7 +25,7 @@ class HomeController extends AbstractController
     #[Route('/parcours', name: 'app_parcours')]
     public function parcours(): Response
     {
-        return $this->render('home/parcours.html.twig', [
+        return $this->render('global/parcours.html.twig', [
             'page_class' => 'parcours-page',
             'menu_class' => 'parcours-menu',
         ]);

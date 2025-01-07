@@ -1,3 +1,10 @@
+:root {
+  //--text: #2B3044;
+  //--line: #BBC1E1;
+  --line-active: #E4D00A;
+}
+
+
 header{
   position: fixed;
   top: 0;
@@ -7,7 +14,7 @@ header{
   padding: 0;
   &.sticky{
     background-color: $purple;
-    height: 40px;
+    height: 62px;
     overflow: visible;
     li.brand{
       margin-top: 30px;
@@ -42,6 +49,32 @@ header{
         a, a:visited{
           color: $purple;
           text-decoration: none;
+          margin: 0 var(--spacing, 0px);
+          transition: margin .25s;
+          position: relative;
+          &:hover svg{
+            opacity: 1;
+          }
+          svg {
+            width: 110px;
+            position: absolute;
+            top: -33px;
+            left: 28px;
+            transform: translate(-50%, 7px) translateZ(0);
+            fill: none;
+            stroke: var(--stroke, var(--line));
+            stroke-linecap: round;
+            stroke-width: 2px;
+            stroke-dasharray: var(--offset, 69px) 278px;
+            stroke-dashoffset: 361px;
+            transition: stroke .25s ease var(--stroke-delay, 0s), stroke-dasharray .35s;
+            opacity: 0;
+          }
+          &:hover {
+            --stroke: var(--line-active);
+            --stroke-delay: .1s;
+            --offset: 180px;
+          }
         }
       }
       img{
@@ -52,6 +85,61 @@ header{
     &.default-menu-class{
       ul li a, a:visited{
         color: $yellow;
+      }
+    }
+
+  }
+  // mobile
+  @media screen and (max-width: 768px) {
+      background-color: $purple;
+      height: 62px;
+    nav{
+      ul{
+        display: none;
+        margin: 0 20px 0 20px;
+      }
+      .burger{
+        width: 40px;
+        height: 40px;
+        margin-left:auto;
+        margin-top:12px;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 4px;
+        span{
+          border-top: solid 1px #fff;
+        }
+      }
+    }
+    &.mobile-nav{
+      display: flex;
+      position: absolute;
+      background-color: rgba(54,1,63,.94);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100% !important;
+      overflow: visible;
+      z-index: 80;
+      ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 14px;
+        li{
+          a, a:visited{
+            color: $yellow !important;
+            font-size: 3rem;
+            font-family: 'effortless';
+            svg{
+              display: none;
+            }
+          }
+        }
       }
     }
   }

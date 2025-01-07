@@ -30,6 +30,7 @@ class ProjectsController extends AbstractController
     {
         return $this->render('projects/details.html.twig', [
             'project' => $project,
+            'menu_class' => 'project-menu',
         ]);
     }
 }
