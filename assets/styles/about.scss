@@ -4,6 +4,7 @@
     margin: 120px auto 40px auto;
     justify-content: center;
     position: relative;
+    max-width: 96%;
     h1{
       font-family: effortless, serif;
       font-size: 2.2rem;
@@ -33,6 +34,10 @@
     .image-wrapper{
       position: relative;
       margin-left: 30px;
+      margin-right: 40px;
+      @media screen and (max-width: 1048px){
+        margin-right: 10px;
+      }
     }
 
     @media screen and (max-width: 768px) {
@@ -43,8 +48,11 @@
             &.arrow {
               right: 0;
               position: absolute;
-              left: 103px;
+              left: 75px;
               transform: rotate(96deg);
+              @media screen and (max-width: 600px) {
+                left:0;
+              }
             }
           }
         }
@@ -54,7 +62,68 @@
           justify-content: center;
         }
     }
-
+    .tags{
+      margin-left: 40px;
+      @media screen and (max-width: 1048px){
+        margin-left: 10px;
+      }
+      ul{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-left: 0;
+        li{
+          font-size: 1.4rem;
+          color: $purple;
+          min-height: 40px;
+          border:solid 1px $purple;
+          background-color: #fff;
+          position: relative;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 12px;
+          border-radius: 8px;
+          text-align: center;
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            z-index: -2;
+            transition: all 250ms ease-out;
+          }
+          &:nth-child(odd){
+            &:before {
+              transform: skew(-8deg) rotate(-3deg);
+              box-shadow: 1px 8px 18px rgba(31, 31, 31, 0.8);
+              left: 10px;
+              bottom: 12px;
+              width: 50%;
+              height: 55%;
+              max-width: 200px;
+              max-height: 100px;
+            }
+          }
+          &:nth-child(even){
+            &:after {
+              transform: skew(8deg) rotate(3deg);
+              box-shadow: 1px 8px 18px rgba(54,1,63,.8);
+              right: 10px;
+              bottom: 12px;
+              width: 50%;
+              height: 55%;
+              max-width: 200px;
+              max-height: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .text-container{
+    position: relative;
+    background-color: $yellow;
     span.info{
       position: absolute;
       background: url("../images/paint.png") no-repeat center;
@@ -89,21 +158,27 @@
       }
       &.where{
         bottom: 8px;
-        left: 14%;
+        left: 7%;
       }
       &.age{
         bottom: 160px;
         right: 60px;
       }
       &.bounce{
-        animation: bounce 1.2s  ease-in-out infinite;
+        animation: bounce 1.2s  ease-in-out;
       }
     }
-
-  }
-  .text-wrapper{
-    background-color: $yellow;
-    padding: 60px;
+    .text-wrapper{
+      padding: 60px;
+      width: 50%;
+      @media screen and (max-width: 1260px) {
+        width: 62%;
+      }
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
+      margin: auto;
+    }
   }
 }
 

@@ -59,6 +59,17 @@
         top: 18px;
         border-radius: 2px;
         padding: 4px 16px;
+        &:after{
+          position: absolute;
+          content: "";
+          width: 0;
+          border-top: 15px solid transparent;
+          border-bottom: 14px solid transparent;
+          height: 20px;
+          background-color: #fff;
+          color: $purple;
+          top: 0;
+        }
       }
     }
     //odd number borders
@@ -70,16 +81,25 @@
       .date {
         left: 100%;
         margin-left: -10px;
+        &::after {
+          right: 96%;
+          border-right-width: 19px;
+          border-right-style: solid;
+        }
       }
     }
     //even number borders
     .timeline-item:nth-child(even) {
       border-left: 3px solid;
       padding-right: 0;
-
       .date {
         right: 100%;
         margin-right: -10px;
+        &::after{
+          left: 96%;
+          border-left-width: 19px;
+          border-left-style: solid;
+        }
       }
     }
     //handle first and last

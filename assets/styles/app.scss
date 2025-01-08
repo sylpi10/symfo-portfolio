@@ -17,7 +17,6 @@ html{
 }
 body{
   font-family: "montserrat", serif;
-  margin-top: -20px;
 }
 *, *:before, *:after {
   box-sizing: border-box;
@@ -25,24 +24,12 @@ body{
 ul{
   list-style-type: none;
 }
-
-
-
+a{
+  text-decoration: none;
+}
 .section-container{
   position: relative;
 
-
-//.content{
-//  @media screen and (min-width: 768px) {
-//    margin: 0 60px;
-//  }
-//  @media screen and (max-width: 768px) {
-//    margin: 0 20px;
-//  }
-//  @media screen and (max-width: 768px) {
-//    margin: 0 14px;
-//  }
-//}
 }
 
 button.cta{
@@ -67,7 +54,10 @@ button.cta{
   &.project-links{
     margin:auto auto 40px auto;
     &::before{
-      background-color: $yellow;
+      background-color: orange;
+    }
+    &:hover a{
+      color: orange;
     }
   }
   &.mail-cta{
@@ -94,7 +84,7 @@ button.cta{
     font-weight: bold;
   }
   a{
-    background-color: #36013f;
+    background-color: $purple;
 }
   span{
     background-color: #fff;
@@ -105,12 +95,70 @@ button.cta{
 
 footer{
   background-color: #333;
-  min-height: 300px;
   width: 100%;
-  display: flex;justify-content: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
   color: $yellow;
   z-index: 16;
+  .footer-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    padding: 40px 0;
+    .brand{
+      display: flex;
+      a.logo-link{
+        margin-right: 18px;
+      }
+      .text{
+        h4{
+          color: #fff;
+        }
+        a{
+          color: #fff;
+          text-decoration: none;
+          &:hover{
+            color: $yellow;
+          }
+        }
+      }
+    }
+
+    .links{
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      a{
+        svg{
+          fill: #fff;
+          transition:all ease .3s;
+        }
+        &:hover{
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+          & svg{
+            fill: $yellow;
+            transform: scale(1.07);
+          }
+        }
+      }
+    }
+  }
+  .copyright{
+    border-top: solid 1px rgba(228,208,10,.4);
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    align-items: center;
+    span{
+      text-align: center;
+      margin: 0 5px;
+    }
+  }
 }
 
 @import "home";

@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'effortless';
+  font-family: 'effortless', serif;
   src: url('../../assets/fonts/effortless.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -11,7 +11,7 @@
     @media screen and (min-width: 768px) {
       height: 100vh;
     }
-    background: linear-gradient(-128deg, $purple 20%, #5E3365);
+    background: linear-gradient(-128deg, $purple, #5E3365);
     display: flex;
     flex-direction: column;
     .presentation{
@@ -40,7 +40,7 @@
           padding-bottom: 40px;
           flex-direction: column;
           font-family: effortless, serif;
-          background: -webkit-linear-gradient($yellow 69%, orange);
+          background: -webkit-linear-gradient($yellow 54%, orange);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           .title{
@@ -94,7 +94,7 @@
       position: absolute;
       width: 735px;
       right: 0;
-      bottom: 20px;
+      bottom: 0;
       z-index: 4;
       @media screen and (max-width: 768px) {
         display: none;

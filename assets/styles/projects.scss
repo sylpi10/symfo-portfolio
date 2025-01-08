@@ -17,11 +17,9 @@
       width: calc(100%/3);
       min-width: 300px;
       height: 300px;
-      cursor: pointer;
       overflow: hidden;
       position: relative;
       .item-content{
-        filter: grayscale(0);
         position: relative;
         background-size: 100%;
         background-color: rgba(54,1,63,.4);
@@ -68,8 +66,42 @@
           @media screen and (max-width: 768px) {
             opacity: 1;
           }
-          transition: opacity .4s ease;
+          transition: all .4s ease;
           margin-bottom: 24px;
+          .see-more {
+          --b: 3px;   /* border thickness */
+          --s: .45em; /* size of the corner */
+          --color: #E4D00A;
+
+          padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+          color: var(--color);
+          --_p: var(--s);
+          background:
+                  conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+                  var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+          transition: .3s linear, color 0s, background-color 0s;
+          outline: var(--b) solid #0000;
+          outline-offset: .6em;
+          font-size: 16px;
+          font-weight: bold;
+          border: 0;
+
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+        }
+
+          .see-more:hover,
+          .see-more:focus-visible{
+            --_p: 0px;
+            outline-color: var(--color);
+            outline-offset: .05em;
+          }
+
+          .see-more:active {
+            background: var(--color);
+            color: #fff;
+          }
         }
       }
 
@@ -121,9 +153,41 @@
     }
     p a.link{
       color: $purple;
-      text-decoration: none;
       font-weight: bold;
+      &.see-more {
+        --b: 3px;   /* border thickness */
+        --s: .45em; /* size of the corner */
+        --color: #642970;
+
+        padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+        color: var(--color);
+        --_p: var(--s);
+        background:
+                conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+                var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+        transition: .3s linear, color 0s, background-color 0s;
+        outline: var(--b) solid #0000;
+        outline-offset: .6em;
+        font-size: 16px;
+
+        border: 0;
+
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      &.see-more:hover,
+      &.see-more:focus-visible{
+        --_p: 0px;
+        outline-color: var(--color);
+        outline-offset: .05em;
+      }
+
+      &.see-more:active {
+        background: var(--color);
+        color: #fff;
+      }
     }
   }
-
 }

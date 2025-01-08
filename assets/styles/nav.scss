@@ -33,10 +33,13 @@ header{
     width: 100%;
     margin: 0;
     padding: 0;
+    .brand{
+      margin-left: 20px;
+    }
     ul{
       display: flex;
-      justify-content: space-between;
-      gap: 18px;
+      justify-content: space-around;
+      gap: 12px;
       padding: 0 14px;
       margin: 0 60px 0 60px;
       flex: 1;
@@ -134,7 +137,7 @@ header{
           a, a:visited{
             color: $yellow !important;
             font-size: 3rem;
-            font-family: 'effortless';
+            font-family: 'effortless', serif;
             svg{
               display: none;
             }

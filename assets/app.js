@@ -17,20 +17,13 @@ window.addEventListener('scroll', () => {
 })
 
 const infoBadges = document.querySelectorAll('span.info');
-// const infosArray = [...infoBadges].map(info => info);
 window.addEventListener('scroll', () => {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        infoBadges.forEach(el => {
-            el.classList.add('bounce');
-      })
-    }else{
-        infoBadges.forEach(el => {
-            el.classList.remove('bounce');
-        })
-    }
+    infoBadges.forEach(el => {
+        el.classList.add('bounce');
+    })
 })
 
-
+// mobile menu
 const burger = document.querySelector('.burger');
 burger.addEventListener('click', () => {
     document.querySelector('header.header').classList.toggle('mobile-nav');

@@ -17,10 +17,10 @@
                     <p>Développé avec : <b>{{ project.technos }}</b> </p>
                     <p>
                         {% if project.weblink %}
-                            <a href="{{ project.weblink }}" class="link">Voir le site</a> |
+                            <a href="{{ project.weblink }}" target="_blank" title="Aller sur le site" class="see-more link">Voir le site</a>
                         {% endif %}
                         {% if project.githublink %}
-                            <a href="{{ project.githublink }}" class="link">Voir le github</a>
+                            <a href="{{ project.githublink }}" target="_blank" title="Répo Github" class="see-more link">Voir le github</a>
                         {% endif %}
                     </p>
                 </div>
