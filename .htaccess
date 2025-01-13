@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^melting\-k\-test\.com\,melting\-k\-testcom_sylvainpillet\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.melting\-k\-test\.com\,melting\-k\-testcom_sylvainpillet\.com$
+RewriteRule ^/?$ "http\:\/\/https\:\/\/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^psytcc\-hautesalpes\.fr\,psytcc\-hautesalpesfr_sylvainpillet\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.psytcc\-hautesalpes\.fr\,psytcc\-hautesalpesfr_sylvainpillet\.com$
+RewriteRule ^/?$ "https\:\/\/psytcc\-hautesalpes\.fr\/public" [R=301,L]
+
+# Redirect all requests to the public folder's index.php
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]

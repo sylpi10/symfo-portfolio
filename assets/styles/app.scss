@@ -1,6 +1,12 @@
 @font-face {
   font-family: 'montserrat';
-  src: url('../../assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'effortless';
+  src: url('../fonts/effortless.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -32,67 +38,6 @@ a{
 
 }
 
-button.cta{
-  width: 200px;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  height: 40px;
-  position: relative;
-  overflow: hidden;
-  padding: 4px;
-  border: none;
-  &::before{
-    position: absolute;
-    content:"";
-    left: -8px;
-    transform: rotate(10deg);
-    width: 108%;
-    height: 100%;
-    transition: trasform 2s;
-  }
-  &.project-links{
-    margin:auto auto 40px auto;
-    &::before{
-      background-color: orange;
-    }
-    &:hover a{
-      color: orange;
-    }
-  }
-  &.mail-cta{
-    margin: 40px auto;
-    &::before{
-      background-color:$purple;
-    }
-  }
-  &:hover::before{
-    animation: animate 1.2s  ease-in-out;
-  }
-  a, span{
-    z-index: 12;
-    text-align: center;
-    height: 34px;
-    padding: 4px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $yellow;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  a{
-    background-color: $purple;
-}
-  span{
-    background-color: #fff;
-    color: $purple;
-    cursor: pointer;
-  }
-}
-
 footer{
   background-color: #333;
   width: 100%;
@@ -108,6 +53,8 @@ footer{
     align-items: flex-end;
     width: 100%;
     padding: 40px 0;
+    gap: 20px;
+    flex-wrap: wrap;
     .brand{
       display: flex;
       a.logo-link{
