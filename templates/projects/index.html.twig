@@ -23,18 +23,18 @@
                                 {%  if project.weblink %}
                                 <a href="{{ project.weblink }}" target="_blank" class="see-more" title="Aller sur le site">
 {#                                    <img src="{{ asset('images/link.svg') }}" alt="icone github" width="30">#}
-                                    Voir le site
+                                    <span>Voir le site</span>
                                 </a>
                                 {% endif %}
                                 {%  if project.githublink %}
                                 <a href="{{project.githublink}}" target="_blank" class="see-more" title="Répo github">
 {#                                    <img src="{{ asset('images/github.svg') }}" alt="icone github" width="30">#}
-                                    Github
+                                    <span>Github</span>
                                 </a>
                                 {% endif %}
                                 <a href="{{ path('app_projects_details', {id: project.id}) }}" class="see-more"  title="Voir les détails du projet" >
 {#                                    <img src="{{ asset('images/lens.svg') }}" alt="icone de loupe" width="30">#}
-                                    Détails
+                                    <span>Détails</span>
                                 </a>
                             </div>
 

@@ -69,7 +69,7 @@
           transition: all .4s ease;
           margin-bottom: 24px;
           .see-more {
-          --b: 3px;   /* border thickness */
+            --b: 3px;   /* border thickness */
           --s: .45em; /* size of the corner */
           --color: #E4D00A;
 
@@ -89,15 +89,32 @@
           user-select: none;
           -webkit-user-select: none;
           touch-action: manipulation;
+            @media screen and (max-width: 768px) {
+              min-height: 50px;
+              padding: 0;
+              min-width: 120px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              span{
+                background-color: rgba(54,1,63,.64);
+                margin: 0;
+                display: flex;
+                width: 83%;
+                height: 59%;
+                justify-content: center;
+                align-items: center;
+              }
+              //position: relative;
+              //color: $yellow;
+            }
         }
-
           .see-more:hover,
           .see-more:focus-visible{
             --_p: 0px;
             outline-color: var(--color);
             outline-offset: .05em;
           }
-
           .see-more:active {
             background: var(--color);
             color: #fff;

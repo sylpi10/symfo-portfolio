@@ -61,119 +61,127 @@
       }
     }
 
-    .timeline-item {
-      display: flex;
-      line-height: 1.2em;
-      border-top: 3px solid;
-      border-image: linear-gradient(to right, $purple 0%, #c183cc 100%);
-      border-image-slice: 1;
-      margin: auto;
-      padding: 30px;
-      counter-increment: section;
-      position: relative;
-      width: 80%;
-      @media screen and (max-width: 768px) {
-        width: 100%;
-      }
-      .timeline-content{
-        //display: flex;
-        //justify-content: center;
-        //flex-direction: column;
-        //margin: auto;
-      }
+    .timeline {
+        margin:0 20px;
       ul{
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-        li{
-          color: $purple;
-          background-color: $yellow;
-          padding: 6px 12px;
-          font-weight: bold;
-          &::after {
-            height: 2.375rem;
-            width: 2.375rem;
-            top: -1px;
-            right: -1px;
-            transform: rotate(-30deg) translateX(1.1875rem);
+        padding-left: 0;
+        .timeline-item {
+          display: flex;
+          line-height: 1.2em;
+          border-top: 3px solid;
+          border-image: linear-gradient(to right, $purple 0%, #c183cc 100%);
+          border-image-slice: 1;
+          margin: auto;
+          padding: 30px;
+          counter-increment: section;
+          position: relative;
+          width: 80%;
+          @media screen and (max-width: 768px) {
+            width: 100%;
+          }
+          .timeline-content{
+            //display: flex;
+            //justify-content: center;
+            //flex-direction: column;
+            //margin: auto;
+          }
+          ul{
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            li{
+              color: $purple;
+              background-color: $yellow;
+              padding: 6px 12px;
+              font-weight: bold;
+              &::after {
+                height: 2.375rem;
+                width: 2.375rem;
+                top: -1px;
+                right: -1px;
+                transform: rotate(-30deg) translateX(1.1875rem);
+              }
+            }
+
+          }
+          .date{
+            position: absolute;
+            background-color: $purple;
+            color: #fff;
+            line-height: 1.25em;
+            top: 18px;
+            border-radius: 2px;
+            padding: 4px 16px;
+            &:after{
+              position: absolute;
+              content: "";
+              width: 0;
+              border-top: 15px solid transparent;
+              border-bottom: 14px solid transparent;
+              height: 20px;
+              background-color: #fff;
+              color: $purple;
+              top: 0;
+            }
           }
         }
+        //odd number borders
+        .timeline-item:nth-child(odd) {
+          border-right: 3px solid;
+          padding-left: 50px;
+          justify-content: flex-end;
+          text-align: right;
+          .date {
+            left: 100%;
+            margin-left: -10px;
+            @media screen and (max-width: 768px) {
+              left: auto;
+              margin-left: 0;
+              right: -20px;
+              top: 6px;
+            }
+            &::after {
+              right: 96%;
+              border-right-width: 19px;
+              border-right-style: solid;
+            }
+          }
+        }
+        //even number borders
+        .timeline-item:nth-child(even) {
+          border-left: 3px solid;
+          padding-right: 0;
+          .date {
+            right: 100%;
+            margin-right: -10px;
+            @media screen and (max-width: 768px) {
+              right: auto;
+              margin-right: 0;
+              left: -20px;
+              top: 6px;
+            }
+            &::after{
+              left: 96%;
+              border-left-width: 19px;
+              border-left-style: solid;
+            }
+          }
+        }
+        //handle first and last
+        .timeline-item:first-child {
+          border-top: 0;
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+        }
+        .timeline-item:last-child {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
 
-      }
-      .date{
-        position: absolute;
-        background-color: $purple;
-        color: #fff;
-        line-height: 1.25em;
-        top: 18px;
-        border-radius: 2px;
-        padding: 4px 16px;
-        &:after{
-          position: absolute;
-          content: "";
-          width: 0;
-          border-top: 15px solid transparent;
-          border-bottom: 14px solid transparent;
-          height: 20px;
-          background-color: #fff;
-          color: $purple;
-          top: 0;
-        }
-      }
     }
-    //odd number borders
-    .timeline-item:nth-child(odd) {
-      border-right: 3px solid;
-      padding-left: 50px;
-      justify-content: flex-end;
-      text-align: right;
-      .date {
-        left: 100%;
-        margin-left: -10px;
-        @media screen and (max-width: 768px) {
-          left: auto;
-          margin-left: 0;
-          right: -20px;
-          top: 6px;
-        }
-        &::after {
-          right: 96%;
-          border-right-width: 19px;
-          border-right-style: solid;
-        }
-      }
-    }
-    //even number borders
-    .timeline-item:nth-child(even) {
-      border-left: 3px solid;
-      padding-right: 0;
-      .date {
-        right: 100%;
-        margin-right: -10px;
-        @media screen and (max-width: 768px) {
-          right: auto;
-          margin-right: 0;
-          left: -20px;
-          top: 6px;
-        }
-        &::after{
-          left: 96%;
-          border-left-width: 19px;
-          border-left-style: solid;
-        }
-      }
-    }
-    //handle first and last
-    .timeline-item:first-child {
-      border-top: 0;
-      border-top-right-radius: 0;
-      border-top-left-radius: 0;
-    }
-    .timeline-item:last-child {
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-    }
+
   }
 
   .toolkit-wrapper{
